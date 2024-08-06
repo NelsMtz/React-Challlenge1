@@ -1,14 +1,15 @@
 import React from 'react'
 import  {useEffect, useState} from 'react'
+import TransactionList from './TransactionList';
 
 function Home() {
 
-    const [transactions, useTransactions] = useState ([]);
+    const [transactions, setTransactions] = useState ([]);
        
     useEffect (()  => {
         fetch( "http://localhost:3000/transactions")
         .then( res => res.json())
-        .then( transactions => setUsers (transactions))
+        .then( transactions => setTransactions (transactions))
         .catch(error => console.log(error))
     },[])
 
@@ -17,7 +18,8 @@ function Home() {
 
   return (
     <div>
-        <header>Bank of Flatiron</header>
+        <header>Bank of Flatiron</header>        
+        <TransactionList   transactions={transactions}/>   
     </div>
   )
 }
