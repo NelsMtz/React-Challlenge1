@@ -7,7 +7,8 @@ function TransactionList({transactions}) {
         <Transaction key={transaction.id}  transaction={transaction}/>
     ))
   return (
-    <div>
+    <div className='transaction-list-container'>
+      <div className='transaction-list-header'>
       <div>
         Date
     </div>
@@ -20,7 +21,7 @@ function TransactionList({transactions}) {
     <div>
           Amount
     </div>
-
+</div>
     {transactionItems}
     </div>
   )

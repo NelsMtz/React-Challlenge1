@@ -5,38 +5,62 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.transaction-list-container {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.transaction-list-header {
+  display: flex;
+  background-color: #1b0909;
+  padding: 10px;
+  font-weight: bold;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.transaction-list-header > div {
+  flex: 1;
+  text-align: center;
 }
 
-.card {
-  padding: 2em;
+/* Style for each Transaction component */
+.transaction-container {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
 }
 
-.read-the-docs {
-  color: #888;
+.transaction-container > div {
+  flex: 1;
+  text-align: center;
+}
+
+.transaction-container > div:first-child { /* Styles for  Dates */
+  text-align: left;
+  background-color: #010f07;
+  padding: 10px ;
+  text-align: center;
+}
+
+.transaction-container > div:last-child {/* Styles for  Amount */
+  font-weight: bold;
+  color: #2ecc71; 
+}
+
+
+ .transaction-container {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+.transaction-container div {
+  margin-bottom: 5px;
+}
+
+.transaction-container div:last-child {
+  margin-bottom: 0;
 }

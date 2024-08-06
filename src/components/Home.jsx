@@ -17,7 +17,7 @@ function Home() {
 
 
   return (
-    <div>
+    <div className='home'> 
         <header>Bank of Flatiron</header>        
         <TransactionList   transactions={transactions}/>   
     </div>

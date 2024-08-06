@@ -2,7 +2,7 @@ import React from 'react'
 
 function Transaction({transaction}) {
   return (
-    <div>
+    <div className='transaction-container'>
         <div>{transaction.date}</div>
         <div>{transaction.description}</div>
         <div>{transaction.category}</div>
