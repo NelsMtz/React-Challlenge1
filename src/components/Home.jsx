@@ -1,6 +1,7 @@
 import React from 'react'
 import  {useEffect, useState} from 'react'
 import TransactionList from './TransactionList';
+import Form from './Form';
 
 function Home() {
 
@@ -19,7 +20,8 @@ function Home() {
   return (
     <div className='home'> 
         <header>Bank of Flatiron</header>        
-        <TransactionList   transactions={transactions}/>   
+        <TransactionList   transactions={transactions}/>  
+        {/* <Form  addtransaction ={form}/>  */}
     </div>
   )
 }
