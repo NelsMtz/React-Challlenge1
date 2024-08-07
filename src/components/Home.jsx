@@ -2,11 +2,13 @@ import React from 'react'
 import  {useEffect, useState} from 'react'
 import TransactionList from './TransactionList';
 import Form from './Form';
+import SearchTransaction from './SearchTransaction';
 
 function Home() {
-
+    
     const [transactions, setTransactions] = useState ([]);
-       
+    const [searchQuery, setSearchQuery] = useState ([]);
+
     useEffect (()  => {
         fetch( "http://localhost:3000/transactions")
         .then( res => res.json())
@@ -30,7 +32,8 @@ function Home() {
   return (
     <div className='home'> 
         <header>Bank of Flatiron</header>  
-        <Form  addTransaction ={addTransaction}/>       
+        <Form  addTransaction ={addTransaction}/> 
+        <SearchTransaction  searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>      
         <TransactionList   transactions={transactions}/>  
         
     </div>
