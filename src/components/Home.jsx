@@ -8,8 +8,9 @@ import Sort from './Sort';
 function Home() {
     
     const [transactions, setTransactions] = useState ([]);
-    const [searchQuery, setSearchQuery] = useState ([]);
-    const [sortOption, setSortOption] = useState ([]);
+    const [searchQuery, setSearchQuery] = useState ('');
+    const [sortOption, setSortOption] = useState ('');
+    
 
     useEffect (()  => {
         fetch( "http://localhost:3000/transactions")
@@ -44,16 +45,27 @@ function Home() {
         return new Date(a.date) - new Date(b.date)
       }
     });
-  
-      
+   
+    const filteredTransactions = sortedTransactions.filter(transaction =>
+      transaction.description.includes(searchQuery)
+    );
+
+    const deleteTransaction = (id)=>{
+      fetch (`http://localhost:3000/transactions/${id}`,{
+      method : "DELETE",}
+    )
+      .then (() => setTransactions(transactions.filter(transaction => transaction.id  !==id)))
+      .catch (error => console.log(error))
+  }
+    
 
   return (
     <div className='home'> 
         <header>Bank of Flatiron</header>  
         <Form  addTransaction ={addTransaction}/> 
         <SearchTransaction  searchQuery={searchQuery} setSearchQuery={setSearchQuery}/>      
-        <Sort sortOption={sortOption} onChange ={handleSortChange}  />
-        <TransactionList   transactions={transactions}/>  
+        <Sort sortOption={sortOption} onSortChange={handleSortChange}  />
+        <TransactionList   transactions={filteredTransactions} onDelete={deleteTransaction}/> 
         
     </div>
   )
