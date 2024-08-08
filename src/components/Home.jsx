@@ -13,14 +13,14 @@ function Home() {
     
 
     useEffect (()  => {
-        fetch( "http://localhost:3000/transactions")
+        fetch( "https://bank-of-flatiron-ashen.vercel.app/transactions")
         .then( res => res.json())
         .then( transactions => setTransactions (transactions))
         .catch(error => console.log(error))
     },[])
 
     const addTransaction = (newTransaction) => {
-      fetch("http://localhost:3000/transactions", {
+      fetch("https://bank-of-flatiron-ashen.vercel.app/transactions", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -51,7 +51,7 @@ function Home() {
     );
 
     const deleteTransaction = (id)=>{
-      fetch (`http://localhost:3000/transactions/${id}`,{
+      fetch (`https://bank-of-flatiron-ashen.vercel.app/transactions//${id}`,{
       method : "DELETE",}
     )
       .then (() => setTransactions(transactions.filter(transaction => transaction.id  !==id)))
