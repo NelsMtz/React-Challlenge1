@@ -13,8 +13,12 @@ function Form({addTransaction}) {
         e.preventDefault ()
 
     const newTransaction = {
-        description, category, amount: parseFloat (amount), date 
+        description,
+         category, 
+         amount: parseFloat (amount), 
+         date 
          }
+
      addTransaction(newTransaction) 
          setDescription("") 
          setCategory("") 
@@ -30,7 +34,8 @@ function Form({addTransaction}) {
         <input type="text" value={category} onChange={(e) => setCategory(e.target.value)} placeholder='Category' required/>
         <input type="number" value={amount}  onChange={(e) => setAmount(e.target.value)} placeholder='Amount' required/>
         <input type="date" value={date}  onChange={(e) => setDate(e.target.value)}required/>
-
+       
+        <button type="submit">Add Transaction</button>
         </form>
     
   )

@@ -15,7 +15,7 @@
 
 .transaction-list-header {
   display: flex;
-  background-color: #1b0909;
+  background-color: #2cacc0;
   padding: 10px;
   font-weight: bold;
 }
@@ -39,19 +39,19 @@
 
 .transaction-container > div:first-child { /* Styles for  Dates */
   text-align: left;
-  background-color: #010f07;
+  background-color: #13a222;
   padding: 10px ;
   text-align: center;
 }
 
 .transaction-container > div:last-child {/* Styles for  Amount */
   font-weight: bold;
-  color: #2ecc71; 
+  color: #0fd8f7fa; 
 }
 
 
  .transaction-container {
-  border: 1px solid #ccc;
+  border: 1px solid #d8dcd7;
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 5px;
@@ -63,4 +63,10 @@
 
 .transaction-container div:last-child {
   margin-bottom: 0;
+}
+
+body{
+  background-image: url(https://i.pinimg.com/236x/26/d8/99/26d89936ac5225742d291cb3a142239b.jpg);
+background-repeat: no-repeat;
+background-size:cover ;
 }
